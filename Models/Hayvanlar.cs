@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace yeni.Models
 {
@@ -8,6 +8,8 @@ namespace yeni.Models
         public int HayvanID { get; set; }
         public string HayvanName { get; set; }
         public string HayvanIrk { get; set; }
+        public int HayvanAgirlik { get; set; }
+        public string  HayvanCinsiyet { get; set; }
         public int HayvanYas { get; set; }
     }
 }
