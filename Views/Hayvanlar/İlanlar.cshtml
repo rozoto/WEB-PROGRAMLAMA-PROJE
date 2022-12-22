@@ -1,0 +1,87 @@
+﻿@using yeni.Models
+@model List<Hayvanlar>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/css/navbar.css">
+
+    <link href="~/css/navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">NİZ PetShop</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="giris.html">Ana Sayfa</a></li>
+                <li class="active"><a href="/Hayvanlar/İlanlar">İlanlar</a></li>
+                <li><a href="/Hayvanlar/İletisim">İletişim</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/Hayvanlar/Kayit"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="/Hayvanlar/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Evcil Hayvanlarımız</h2>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    @foreach (var item in Model)
+                    {
+                        <img src="~css/resim.jpg" style="width: 264px; height: 352px; left: 64.2px; top: 0px;">
+                        <div class="caption">
+                            <div class="so-widget-sow-editor so-widget-sow-editor-base">
+                                <div class="siteorigin-widget-tinymce textwidget">
+                                    <div class="group-text">
+                                        <p><strong>Ad : <span class="color-blue" style="color: #3366ff;">@item.HayvanName</span></strong></p>
+                                    </div>
+                                    @*<div class="group-text">
+                                        <p><strong>Cins : <span class="color-blue" style="color: #3366ff;">@item.HayvanCins</span></strong></p>
+                                    </div>*@
+                                    <div class="group-text">
+                                        <p><strong>Irkı : : <span class="color-blue" style="color: #3366ff;">@item.HayvanIrk</span></strong></p>
+                                    </div>
+                                    <div class="group-text">
+                                        <p><strong>Ağırlık : <span class="color-blue" style="color: #3366ff;">@item.HayvanAgirlik</span></strong></p>
+                                    </div>
+                                    <div class="group-text">
+                                        <p><strong>Cinsiyet : <span class="color-blue" style="color: #3366ff;">@item.HayvanCinsiyet</span></strong></p>
+                                    </div>
+                                    <div class="group-text">
+                                        <p><strong>Yaş : <span class="color-blue" style="color: #3366ff;">@item.HayvanYas</span></strong></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+           
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</body>
+</html>
