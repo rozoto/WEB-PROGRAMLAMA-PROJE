@@ -1,15 +1,35 @@
-﻿
+@model odevSon.Models.İlanOlustur
 @{
-    Layout = null;
+    ViewData["Title"] = "İlanVer";
+    Layout = "~/Views/Shared/NavbarLayout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>İlanVer</title>
-</head>
-<body>
-</body>
-</html>
+<br />
+<form class="form-group" action="İlanVer"  method="post" enctype="multipart/form-data">
+    <br />
+    @Html.Label("Hayvan Adı")
+    @Html.TextBoxFor(x=>x.HayvanName, new{@class="form-control"})
+    <br />
+    @Html.Label("Hayvan Irkı")
+    @Html.TextBoxFor(x=>x.HayvanIrk, new{@class="form-control"})
+    <br />
+    @Html.Label("Hayvan Yaşı")
+    @Html.TextBoxFor(x=>x.HayvanYas, new{@class="form-control"})
+    <br />
+    @Html.Label("Hayvan Ağırlık")
+    @Html.TextBoxFor(x=>x.HayvanAgirlik, new{@class="form-control"})
+    <br />
+    @Html.Label("Hayvan Cins")
+    @Html.TextBoxFor(x=>x.HayvanCins, new{@class="form-control"})
+    <br />
+    @Html.Label("Hayvan Cinsiyeti")
+    @Html.TextBoxFor(x=>x.HayvanCinsiyet, new{@class="form-control"})
+    <br />
+    @Html.Label("Resim Seç")
+    <input type="file" name="Hayvanİmage" />
+    <br />
+    <br />
+    <button class="btn btn-default" style="background-color:burlywood">
+        İlan Ver
+    </button>
+</form>
