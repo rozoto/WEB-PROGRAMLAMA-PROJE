@@ -1,0 +1,35 @@
+﻿@model odevvv.Models.KullaniciEkle
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Panel Login</title>
+    <link rel="stylesheet" href="~/css/Kayit.css">
+</head>
+<body>
+    <div class="container">
+        <div class="contact-form">
+            <img src="~/css/kayit.png" class="admin-img">
+            <h2 class="h2-class">Kayıt ol </h2>
+            <form method="post">
+                <div class="txtb">
+                    <input type="text" placeholder="Username" name="Kullanici">
+                </div>
+                <div class="txtb">
+                    <input type="password" placeholder="Password" name="Sifre">
+                </div>
+                <div class="txtb">
+                    <input type="password" placeholder="Repeat Password" name="Sifre">
+                </div>
+            
+                <input type="submit" class="logbtn" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
