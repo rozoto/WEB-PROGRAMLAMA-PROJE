@@ -1,12 +1,11 @@
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.Metadata;
 using Microsoft.AspNetCore.Mvc;
+using odevvv.Models;
 using System.Security.Claims;
-using yeni.Models;
 
-namespace yeni.Controllers
+namespace odevvv.Controllers
 {
     public class LoginController : Controller
     {
@@ -19,7 +18,6 @@ namespace yeni.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-
         public async Task<IActionResult> GirisYap(Admin p)
         {
             var bilgiler = c.Admins.FirstOrDefault(x => x.Kullanici == p.Kullanici
@@ -38,7 +36,7 @@ namespace yeni.Controllers
             return View();
         }
         [HttpGet]
-        public async Task<IActionResult> Logout()    
+        public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Hayvanlar");
