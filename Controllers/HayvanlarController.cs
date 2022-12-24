@@ -1,13 +1,12 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using odevSon.Models;
-using yeni.Models;
+using odevvv.Models;
 
-namespace yeni.Controllers
+namespace odevvv.Controllers
 {
     public class HayvanlarController : Controller
     {
-        Context c=new Context();
+        Context c = new Context();
         [AllowAnonymous]
 
         public IActionResult Index()
@@ -36,18 +35,18 @@ namespace yeni.Controllers
         [HttpPost]
         public IActionResult İlanVer(İlanOlustur h)
         {
-            Hayvanlar f=new Hayvanlar();
+            Hayvanlar f = new Hayvanlar();
             if (h.Hayvanİmage != null)
             {
                 var extension = Path.GetExtension(h.Hayvanİmage.FileName);
                 var newimagename = Guid.NewGuid() + extension;
-                var location=Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/css/",newimagename);
-                var stream=new FileStream(location, FileMode.Create);
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "~/wwwroot/css/", newimagename);
+                var stream = new FileStream(location, FileMode.Create);
                 h.Hayvanİmage.CopyTo(stream);
                 f.Hayvanİmage = newimagename;
             }
             f.HayvanName = h.HayvanName;
-            f.HayvanCins=h.HayvanCins;
+            f.HayvanCins = h.HayvanCins;
             f.HayvanCinsiyet = h.HayvanCinsiyet;
             f.HayvanIrk = h.HayvanIrk;
             f.HayvanAgirlik = h.HayvanAgirlik;
@@ -55,27 +54,9 @@ namespace yeni.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
-        [AllowAnonymous]
 
-        public IActionResult Kayit()
-        {
-            return View();
-        }
         [AllowAnonymous]
-
         public IActionResult HayvanBul()
-        {
-            return View();
-        }
-       
-    }
-}
-
-        public IActionResult Kayit()
-        {
-            return View();
-        }
-        public IActionResult Login()
         {
             return View();
         }
