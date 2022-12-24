@@ -38,7 +38,7 @@ namespace yeni.Controllers
             return View();
         }
         [HttpGet]
-        public async Task<IActionResult> Logout()
+        public async Task<IActionResult> Logout()    
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Hayvanlar");
