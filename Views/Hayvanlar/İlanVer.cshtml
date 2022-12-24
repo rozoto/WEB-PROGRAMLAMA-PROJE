@@ -1,11 +1,11 @@
-@model odevSon.Models.İlanOlustur
+@model odevvv.Models.İlanOlustur
 @{
     ViewData["Title"] = "İlanVer";
     Layout = "~/Views/Shared/NavbarLayout.cshtml";
 }
 
 <br />
-<form class="form-group" action="İlanVer"  method="post" enctype="multipart/form-data">
+<form class="form-group" action="İlanVer" method="post" enctype="multipart/form-data">
     <br />
     @Html.Label("Hayvan Adı")
     @Html.TextBoxFor(x=>x.HayvanName, new{@class="form-control"})
