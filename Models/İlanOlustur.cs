@@ -1,4 +1,4 @@
-namespace odevSon.Models
+namespace odevvv.Models
 {
     public class İlanOlustur
     {
