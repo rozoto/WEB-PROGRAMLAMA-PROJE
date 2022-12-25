@@ -18,8 +18,8 @@ namespace odevvv.Controllers
 
         public IActionResult İlanlar()
         {
-            var degerler = c.Hayvanlars.ToList();
-            return View(degerler);
+            var deger = c.Hayvanlars.ToList();
+            return View(deger);
         }
         [AllowAnonymous]
 
@@ -33,23 +33,23 @@ namespace odevvv.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult İlanVer(İlanOlustur h)
+        public IActionResult İlanVer(İlanOlustur i)
         {
             Hayvanlar f = new Hayvanlar();
-            if (h.Hayvanİmage != null)
+            if (i.Hayvanİmage != null)
             {
-                var extension = Path.GetExtension(h.Hayvanİmage.FileName);
+                var extension = Path.GetExtension(i.Hayvanİmage.FileName);
                 var newimagename = Guid.NewGuid() + extension;
                 var location = Path.Combine(Directory.GetCurrentDirectory(), "~/wwwroot/css/", newimagename);
                 var stream = new FileStream(location, FileMode.Create);
-                h.Hayvanİmage.CopyTo(stream);
+                i.Hayvanİmage.CopyTo(stream);
                 f.Hayvanİmage = newimagename;
             }
-            f.HayvanName = h.HayvanName;
-            f.HayvanCins = h.HayvanCins;
-            f.HayvanCinsiyet = h.HayvanCinsiyet;
-            f.HayvanIrk = h.HayvanIrk;
-            f.HayvanAgirlik = h.HayvanAgirlik;
+            f.HayvanName = i.HayvanName;
+            f.HayvanCins = i.HayvanCins;
+            f.HayvanCinsiyet = i.HayvanCinsiyet;
+            f.HayvanIrk = i.HayvanIrk;
+            f.HayvanAgirlik = i.HayvanAgirlik;
             c.Hayvanlars.Add(f);
             c.SaveChanges();
             return RedirectToAction("Index");
