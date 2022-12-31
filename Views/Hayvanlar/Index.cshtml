@@ -1,4 +1,3 @@
-﻿
 @{
     Layout = null;
 }
@@ -6,107 +5,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <br>
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="~/css/navbar.css">
-
-    <link href="./giris/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            font-family: "Inconsolata", sans-serif;
+        }
 
+        .bgimg {
+            background-position: center;
+            background-size: cover;
+            background-image: url("/css/arkaplan.jpg");
+            min-height: 100%;
+        }
+
+        .menu {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand">NİZ PetShop</a>
+                <a class="navbar-brand" href="/Hayvanlar/Index">NİZ PetShop</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="giris.html">Ana Sayfa</a></li>
-                <li><a href="ilanlar.html">İlanlar</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
+                <li class="active"><a href="/Hayvanlar/Index">Anasayfa</a></li>
+          
+                <li><a href="/Hayvanlar/İlanlar">İlanlar</a></li>
+                <li><a href="/Hayvanlar/İletisim">İletisim</a></li>
+            </ul>
 
-            </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="kayit.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="/Login/Logout"><span class="glyphicon glyphicon-user"></span>Çıkış Yap</a></li>
+                <li><a href="/Kayit/Kayit"><span class="glyphicon glyphicon-user"></span>Kayıt ol</a></li>
+                <li><a href="/Login/GirisYap"><span class="glyphicon glyphicon-log-in"></span> Giriş Yap</a></li>
             </ul>
+          
         </div>
     </nav>
 
-    <div>
-        <div class="bg-dark top-bar">
-            <div class="container">
-                <div></div>
-                <div> </div>
-                <div class="text-white"></div>
-                <br>
-                <p style="color:#ffffff;">
-                    "Ücretsiz dost sahiplendirme ilanları."
-                </p>
-            </div>
+    <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-middle w3-center">
+            <span class="w3-text-white" style="font-size:90px">ücretsiz<br>dost sahiplendirme platformu</span>
         </div>
-
-    </div>
-    <br>
-    <br>
-    <section>
-        <div class="bg-dark2 banner-1 cover-image sptb-3 sptb-tab bg-background2">
-            <div class="header-text mb-0">
-                <div class="container">
-                    <div class="text-center text-white mb-7">
+    </header>
 
 
 
-                        <h1 class="mb-1">Sahiplendirme Platformu</h1>
-                        <p>Satın alma, Sahiplen.</p>
-                        <div class="row">
-                            <div class="col-md-12 d-block">
-                                <div class="search-background bg-transparent">
-                                    <form method="get" action="ilan-ara" accept-charset="utf-8">
-                                        <div class="form row no-gutters ">
 
-                                            <div class="form-group col-md-3 select2-lg  mb-0 bg-white">
-                                                <select name="etur" class="form-control select2-show-search border-bottom-0 select2-hidden-accessible" required="" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                                    <option value="" data-select2-id="3">Tür Seçin</option>
-                                                    <option value="94">Kedi</option>
-                                                    <option value="95">Köpek</option>
-                                                </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 294px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-etur-dl-container"><span class="select2-selection__rendered" id="select2-etur-dl-container" role="textbox" aria-readonly="true" title="Tür Seçin"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                            </div>
-
-                                            <div class="form-group col-md-2 select2-lg  mb-0 bg-white">
-                                                <select name="cinsiyet" class="form-control select2-show-search border-bottom-0 select2-hidden-accessible" data-select2-id="4" tabindex="-1" aria-hidden="true">
-                                                    <option value="" data-select2-id="6">Cinsiyet Seçin</option>
-                                                    <option value="Bilinmiyor">Bilinmiyor</option>
-                                                    <option value="Dişi">Dişi</option>
-                                                    <option value="Erkek">Erkek</option>
-                                                    <option value="Dişi &amp; Erkek">Dişi &amp; Erkek</option>
-                                                </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="5" style="width: 196px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-cinsiyet-jg-container"><span class="select2-selection__rendered" id="select2-cinsiyet-jg-container" role="textbox" aria-readonly="true" title="Cinsiyet Seçin"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                            </div>
-
-                                            <div class="col-md-2 mb-0">
-                                                <button type="submit" class="btn btn-lg btn-block btn-secondary br-tl-md-0 br-bl-md-0"><i class="fa fa-paw mr-1"></i>Pet Bul</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div><!-- /header-text -->
-                <br>
-
-            </div>
-
-
-        </div>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 </body>
 </html>
