@@ -5,16 +5,16 @@
     Layout = "~/Views/Shared/NavbarLayout.cshtml";
 }
 
-
     <div class="container">
         <h2>Evcil Hayvanlarımız</h2>
         <br>
         <div class="row">
             <div class="col-md-4">
                 <div class="thumbnail">
+                    
                     @foreach (var item in Model)
                     {
-                    <img src="@item.Hayvanİmage" style="width: 264px; height: 352px; left: 64.2px; top: 0px;">
+                    <img src="/css/@item.Hayvanİmage" style="width: 264px; height: 352px; left: 64.2px; top: 0px;">
                     <div class="caption">
                         <div class="so-widget-sow-editor so-widget-sow-editor-base">
                             <div class="siteorigin-widget-tinymce textwidget">
