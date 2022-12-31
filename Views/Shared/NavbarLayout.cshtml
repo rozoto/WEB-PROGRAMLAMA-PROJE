@@ -13,23 +13,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
+     <style>
         body, html {
             height: 100%;
             font-family: "Inconsolata", sans-serif;
         }
-
-        .bgimg {
-            background-position: center;
-            background-size: cover;
-            background-image: url("/css/arkaplan.jpg");
-            min-height: 100%;
-        }
-
-        .menu {
-            display: none;
-        }
-    </style>
+     </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -39,7 +28,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/Hayvanlar/Index">Anasayfa</a></li>
-          
+             
                 <li><a href="/Hayvanlar/İlanlar">İlanlar</a></li>
                 <li><a href="/Hayvanlar/İletisim">İletisim</a></li>
             </ul>
@@ -53,15 +42,12 @@
         </div>
     </nav>
 
-    <!-- Header with image -->
-    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
-        <div class="w3-display-middle w3-center">
-            <span class="w3-text-white" style="font-size:90px">ücretsiz<br>dost sahiplendirme platformu</span>
-        </div>
-    </header>
 
-
-
+    <div class="container">
+        @RenderBody();
+    </div>
 
 </body>
 </html>
+
+
