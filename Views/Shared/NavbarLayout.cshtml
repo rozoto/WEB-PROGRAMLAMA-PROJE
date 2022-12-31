@@ -1,4 +1,3 @@
-﻿
 @{
     Layout = null;
 }
@@ -9,9 +8,28 @@
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            font-family: "Inconsolata", sans-serif;
+        }
+
+        .bgimg {
+            background-position: center;
+            background-size: cover;
+            background-image: url("/css/arkaplan.jpg");
+            min-height: 100%;
+        }
+
+        .menu {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -21,45 +39,29 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/Hayvanlar/Index">Anasayfa</a></li>
-                @*<li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Anasayfa <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>*@
+          
                 <li><a href="/Hayvanlar/İlanlar">İlanlar</a></li>
                 <li><a href="/Hayvanlar/İletisim">İletisim</a></li>
             </ul>
+
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/Login/Logout"><span class="glyphicon glyphicon-user"></span>Çıkış Yap</a></li>
-                <li><a href="/Hayvanlar/Kayit"><span class="glyphicon glyphicon-user"></span>Kayıt ol</a></li>
+                <li><a href="/Kayit/Kayit"><span class="glyphicon glyphicon-user"></span>Kayıt ol</a></li>
                 <li><a href="/Login/GirisYap"><span class="glyphicon glyphicon-log-in"></span> Giriş Yap</a></li>
             </ul>
-           @* <div class="uk-navbar-item uk-padding-remove">
-                <a href="javascript:;" class="uk-button uk-button-default uk-button-small uk-flex uk-flex-middle language-button" aria-expanded="false">
-                    <img src="~/css/en.png" alt="turkey logo">
-                    EN
-                    <span uk-icon="icon: icn-arrow-down;" class="uk-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000" fill-rule="nonzero" d="M16.703 9L18 10.336 12.5 16 7 10.336 8.297 9l4.203 4.328z"></path></svg></span>
-                </a>
-                <div class="uk-dropdown language-dropdown uk-dropdown-bottom-left" uk-dropdown="mode: click; animation: uk-animation-slide-top-small; duration: 300" style="left: 1096.9px; top: 35px;">
-                    <ul class="uk-list uk-margin-remove">
-                        <li class="uk-margin-remove">
-                            <a class="uk-link-reset uk-flex uk-flex-middle uk-text-small" href="/Page/Language/Change.aspx?LID=1">
-                                <img src="~/css/tr.jpg" alt="turkey logo">TR
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>*@
+          
         </div>
     </nav>
-  
 
-    <div class="container">
-        @RenderBody();
-    </div>
+    <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-middle w3-center">
+            <span class="w3-text-white" style="font-size:90px">ücretsiz<br>dost sahiplendirme platformu</span>
+        </div>
+    </header>
+
+
+
 
 </body>
 </html>
