@@ -1,31 +1,122 @@
-
 @{
     ViewData["Title"] = "İletisim";
     Layout = "~/Views/Shared/NavbarLayout.cshtml";
 }
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
 
-<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-    <h2 class="w3-wide w3-center">CONTACT</h2>
-    <p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
-    <div class="w3-row w3-padding-32">
-        <div class="w3-col m6 w3-large w3-margin-bottom">
-            <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
-            <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
-            <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
-        </div>
-        <div class="w3-col m6">
-            <form action="/action_page.php" target="_blank">
-                <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                    <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-                    </div>
-                    <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-                    </div>
-                </div>
-                <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-                <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
-            </form>
-        </div>
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+</style>
+</head>
+<body>
+
+<h2>İletişim Formu</h2>
+
+<div class="container">
+  <form action="/action_page.php">
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Adınız</label>
     </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="Adınız..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Soyadınız</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="lastname" placeholder="Soyadınız..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="country">Ülke</label>
+    </div>
+    <div class="col-75">
+      <select id="country" name="country">
+        <option value="turkey">Türkiye</option>
+        <option value="australia">Avustralya</option>
+        <option value="canada">Kanada</option>
+        <option value="usa">USA</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Konu</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" name="subject" placeholder="Bir şeyler yazın.." style="height:200px"></textarea>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
 </div>
+
+</body>
+</html>
+
+
