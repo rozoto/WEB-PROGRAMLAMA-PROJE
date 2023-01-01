@@ -1,64 +1,62 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using odevvv.Models;
+using webOdev.Models;
 
-namespace odevvv.Controllers
+namespace webOdev.Controllers
 {
+    
     public class HayvanlarController : Controller
     {
         Context c = new Context();
-        [AllowAnonymous]
-
         public IActionResult Index()
         {
             var degerler = c.Hayvanlars.ToList();
             return View(degerler);
         }
-        [AllowAnonymous]
 
         public IActionResult İlanlar()
         {
-            var deger = c.Hayvanlars.ToList();
-            return View(deger);
+            var degerler = c.Hayvanlars.ToList();
+            return View(degerler);
         }
-        [AllowAnonymous]
-
-        public IActionResult İletisim()
-        {
-            return View();
-        }
+       
         [HttpGet]
+        [Authorize]
         public IActionResult İlanVer()
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult İlanVer(İlanOlustur i)
+        [Authorize]
+        public IActionResult İlanVer(İlanOlustur h)
         {
             Hayvanlar f = new Hayvanlar();
-            if (i.Hayvanİmage != null)
+            if (h.Hayvanİmage != null)
             {
-                var extension = Path.GetExtension(i.Hayvanİmage.FileName);
+                var extension = Path.GetExtension(h.Hayvanİmage.FileName);
                 var newimagename = Guid.NewGuid() + extension;
-                var location = Path.Combine(Directory.GetCurrentDirectory(), "~/wwwroot/css/", newimagename);
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/css/", newimagename);
                 var stream = new FileStream(location, FileMode.Create);
-                i.Hayvanİmage.CopyTo(stream);
+                h.Hayvanİmage.CopyTo(stream);
                 f.Hayvanİmage = newimagename;
             }
-            f.HayvanName = i.HayvanName;
-            f.HayvanCins = i.HayvanCins;
-            f.HayvanCinsiyet = i.HayvanCinsiyet;
-            f.HayvanIrk = i.HayvanIrk;
-            f.HayvanAgirlik = i.HayvanAgirlik;
+            f.HayvanName = h.HayvanName;
+            f.HayvanCins = h.HayvanCins;
+            f.HayvanCinsiyet = h.HayvanCinsiyet;
+            f.HayvanIrk = h.HayvanIrk;
+            f.HayvanAgirlik = h.HayvanAgirlik;
             c.Hayvanlars.Add(f);
             c.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("İlanlar");
         }
-
-        [AllowAnonymous]
-        public IActionResult HayvanBul()
+        [Authorize]
+        public IActionResult Sahiplen(int id)
         {
-            return View();
+            var hayvan = c.Hayvanlars.Find(id);
+            c.Hayvanlars.Remove(hayvan);
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
